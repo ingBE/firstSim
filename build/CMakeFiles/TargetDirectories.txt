@@ -1,8 +1,0 @@
-/home/ingbe/myGeant4/firstSim/build/CMakeFiles/install/local.dir
-/home/ingbe/myGeant4/firstSim/build/CMakeFiles/install.dir
-/home/ingbe/myGeant4/firstSim/build/CMakeFiles/list_install_components.dir
-/home/ingbe/myGeant4/firstSim/build/CMakeFiles/rebuild_cache.dir
-/home/ingbe/myGeant4/firstSim/build/CMakeFiles/edit_cache.dir
-/home/ingbe/myGeant4/firstSim/build/CMakeFiles/install/strip.dir
-/home/ingbe/myGeant4/firstSim/build/CMakeFiles/first.dir
-/home/ingbe/myGeant4/firstSim/build/CMakeFiles/firstSim.dir
