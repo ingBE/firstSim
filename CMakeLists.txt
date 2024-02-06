@@ -47,6 +47,7 @@ target_link_libraries(firstSim ${Geant4_LIBRARIES})
 #
 set(FIRSTSIM_SCRIPTS
   run.mac
+  init_vis.mac
   vis.mac
   )
 
