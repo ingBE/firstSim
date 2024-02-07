@@ -1,2 +1,3 @@
 ## ignore ./test_git folder
 test_git/
+test_git/*
