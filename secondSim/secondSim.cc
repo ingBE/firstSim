@@ -2,6 +2,8 @@
 
 #include "DetectorConstruction.hh"
 #include "PrimaryGeneratorAction.hh"
+#include "RunAction.hh"
+#include "SteppingAction.hh"
 
 #include "G4RunManager.hh"
 #include "G4UImanager.hh"
@@ -18,6 +20,8 @@ int main(int argc, char** argv)
     runManager->SetUserInitialization(physicsList);
     runManager->SetUserInitialization(new DetectorConstruction());
     runManager->SetUserAction(new PrimaryGeneratorAction());
+    runManager->SetUserAction(new RunAction());
+    runManager->SetUserAction(new SteppingAction());
     runManager->Initialize();
 
     G4VisManager* visManager = new G4VisExecutive(argc, argv);
