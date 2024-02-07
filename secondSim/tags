@@ -1,0 +1,39 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_OUTPUT_MODE	u-ctags	/u-ctags or e-ctags/
+!_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
+!_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
+!_TAG_PROGRAM_URL	https://ctags.io/	/official site/
+!_TAG_PROGRAM_VERSION	0.0.0	//
+0	compile_commands.json	/^{$/;"	o
+1	compile_commands.json	/^{$/;"	o
+2	compile_commands.json	/^{$/;"	o
+CMAKE_CXX_EXTENSIONS	CMakeLists.txt	/^set(CMAKE_CXX_EXTENSIONS OFF)$/;"	v
+CMAKE_CXX_STANDARD	CMakeLists.txt	/^set(CMAKE_CXX_STANDARD 17)$/;"	v
+CMAKE_CXX_STANDARD_REQUIRED	CMakeLists.txt	/^set(CMAKE_CXX_STANDARD_REQUIRED ON)$/;"	v
+CMAKE_EXPORT_COMPILE_COMMANDS	CMakeLists.txt	/^set(CMAKE_EXPORT_COMPILE_COMMANDS ON)$/;"	v
+Construct	src/DetectorConstruction.cc	/^G4VPhysicalVolume* DetectorConstruction::Construct()$/;"	f	class:DetectorConstruction	typeref:typename:G4VPhysicalVolume *
+DetectorConstruction	include/DetectorConstruction.hh	/^class DetectorConstruction : public G4VUserDetectorConstruction$/;"	c
+DetectorConstruction_h	include/DetectorConstruction.hh	/^#define DetectorConstruction_h$/;"	d
+FIRSTSIM_SCRIPTS	CMakeLists.txt	/^set(FIRSTSIM_SCRIPTS$/;"	v
+GeneratePrimaries	src/PrimaryGeneratorAction.cc	/^void PrimaryGeneratorAction::GeneratePrimaries(G4Event* anEvent)$/;"	f	class:PrimaryGeneratorAction	typeref:typename:void
+GetParticleGun	include/PrimaryGeneratorAction.hh	/^        const G4ParticleGun* GetParticleGun() const { return fParticleGun; }$/;"	f	class:PrimaryGeneratorAction	typeref:typename:const G4ParticleGun *
+PimaryGeneratorAction_h	include/PrimaryGeneratorAction.hh	/^#define PimaryGeneratorAction_h$/;"	d
+PrimaryGeneratorAction	include/PrimaryGeneratorAction.hh	/^class PrimaryGeneratorAction : public G4VUserPrimaryGeneratorAction$/;"	c
+PrimaryGeneratorAction	src/PrimaryGeneratorAction.cc	/^PrimaryGeneratorAction::PrimaryGeneratorAction()$/;"	f	class:PrimaryGeneratorAction
+WITH_GEANT4_UIVIS	CMakeLists.txt	/^option(WITH_GEANT4_UIVIS "Build with Geant4 UI and Vis drivers" ON)$/;"	D
+command	compile_commands.json	/^  "command": "\/usr\/bin\/c++  -DG4LIB_BUILD_DLL -DG4UI_USE_QT -DG4VIS_USE_OPENGLQT -DG4VIS_USE_/;"	s	object:0
+command	compile_commands.json	/^  "command": "\/usr\/bin\/c++  -DG4LIB_BUILD_DLL -DG4UI_USE_QT -DG4VIS_USE_OPENGLQT -DG4VIS_USE_/;"	s	object:1
+command	compile_commands.json	/^  "command": "\/usr\/bin\/c++  -DG4LIB_BUILD_DLL -DG4UI_USE_QT -DG4VIS_USE_OPENGLQT -DG4VIS_USE_/;"	s	object:2
+directory	compile_commands.json	/^  "directory": "\/home\/ingbe\/myGeant4\/firstSim",$/;"	s	object:0
+directory	compile_commands.json	/^  "directory": "\/home\/ingbe\/myGeant4\/firstSim",$/;"	s	object:1
+directory	compile_commands.json	/^  "directory": "\/home\/ingbe\/myGeant4\/firstSim",$/;"	s	object:2
+fParticleGun	include/PrimaryGeneratorAction.hh	/^        G4ParticleGun* fParticleGun;$/;"	m	class:PrimaryGeneratorAction	typeref:typename:G4ParticleGun *
+file	compile_commands.json	/^  "file": "\/home\/ingbe\/myGeant4\/firstSim\/firstSim.cc"$/;"	s	object:0
+file	compile_commands.json	/^  "file": "\/home\/ingbe\/myGeant4\/firstSim\/src\/DetectorConstruction.cc"$/;"	s	object:1
+file	compile_commands.json	/^  "file": "\/home\/ingbe\/myGeant4\/firstSim\/src\/PrimaryGeneratorAction.cc"$/;"	s	object:2
+first	CMakeLists.txt	/^add_custom_target(first DEPENDS firstSim)$/;"	t
+firstSim	CMakeLists.txt	/^add_executable(firstSim firstSim.cc ${sources} ${headers})$/;"	t
+firstSim	CMakeLists.txt	/^project(firstSim)$/;"	p
+main	firstSim.cc	/^int main(int argc, char** argv)$/;"	f	typeref:typename:int
+~PrimaryGeneratorAction	src/PrimaryGeneratorAction.cc	/^PrimaryGeneratorAction::~PrimaryGeneratorAction()$/;"	f	class:PrimaryGeneratorAction

@@ -7,11 +7,8 @@
 !_TAG_PROGRAM_VERSION	0.0.0	//
 $(VERBOSE).SILENT	build/Makefile	/^$(VERBOSE).SILENT:$/;"	t
 0	build/compile_commands.json	/^{$/;"	o
-0	compile_commands.json	/^{$/;"	o
 1	build/compile_commands.json	/^{$/;"	o
-1	compile_commands.json	/^{$/;"	o
 2	build/compile_commands.json	/^{$/;"	o
-2	compile_commands.json	/^{$/;"	o
 ARCHITECTURE_ID	build/CMakeFiles/3.16.3/CompilerIdC/CMakeCCompilerId.c	/^#   define ARCHITECTURE_ID /;"	d	file:
 ARCHITECTURE_ID	build/CMakeFiles/3.16.3/CompilerIdC/CMakeCCompilerId.c	/^#  define ARCHITECTURE_ID /;"	d	file:
 ARCHITECTURE_ID	build/CMakeFiles/3.16.3/CompilerIdC/CMakeCCompilerId.c	/^#  define ARCHITECTURE_ID$/;"	d	file:
@@ -125,10 +122,10 @@ CMAKE_HOST_SYSTEM_PROCESSOR	build/CMakeFiles/3.16.3/CMakeSystem.cmake	/^set(CMAK
 CMAKE_HOST_SYSTEM_VERSION	build/CMakeFiles/3.16.3/CMakeSystem.cmake	/^set(CMAKE_HOST_SYSTEM_VERSION "5.15.0-91-generic")$/;"	v
 CMAKE_INSTALL_COMPONENT	build/cmake_install.cmake	/^    set(CMAKE_INSTALL_COMPONENT "${COMPONENT}")$/;"	v
 CMAKE_INSTALL_COMPONENT	build/cmake_install.cmake	/^    set(CMAKE_INSTALL_COMPONENT)$/;"	v
-CMAKE_INSTALL_CONFIG_NAME	build/cmake_install.cmake	/^    set(CMAKE_INSTALL_CONFIG_NAME "Release")$/;"	v
+CMAKE_INSTALL_CONFIG_NAME	build/cmake_install.cmake	/^    set(CMAKE_INSTALL_CONFIG_NAME "")$/;"	v
 CMAKE_INSTALL_MANIFEST	build/cmake_install.cmake	/^  set(CMAKE_INSTALL_MANIFEST "install_manifest.txt")$/;"	v
 CMAKE_INSTALL_MANIFEST	build/cmake_install.cmake	/^  set(CMAKE_INSTALL_MANIFEST "install_manifest_${CMAKE_INSTALL_COMPONENT}.txt")$/;"	v
-CMAKE_INSTALL_PREFIX	build/cmake_install.cmake	/^  set(CMAKE_INSTALL_PREFIX "\/home\/ingbe\/myGeant4\/firstSim\/install")$/;"	v
+CMAKE_INSTALL_PREFIX	build/cmake_install.cmake	/^  set(CMAKE_INSTALL_PREFIX "\/usr\/local")$/;"	v
 CMAKE_INSTALL_SO_NO_EXE	build/cmake_install.cmake	/^  set(CMAKE_INSTALL_SO_NO_EXE "1")$/;"	v
 CMAKE_INTERNAL_PLATFORM_ABI	build/CMakeFiles/3.16.3/CMakeCCompiler.cmake	/^  set(CMAKE_INTERNAL_PLATFORM_ABI "${CMAKE_C_COMPILER_ABI}")$/;"	v
 CMAKE_INTERNAL_PLATFORM_ABI	build/CMakeFiles/3.16.3/CMakeCXXCompiler.cmake	/^  set(CMAKE_INTERNAL_PLATFORM_ABI "${CMAKE_CXX_COMPILER_ABI}")$/;"	v
@@ -245,27 +242,18 @@ cmake_force	build/Makefile	/^cmake_force:$/;"	t
 command	build/compile_commands.json	/^  "command": "\/usr\/bin\/c++  -DG4LIB_BUILD_DLL -DG4UI_USE_QT -DG4VIS_USE_OPENGLQT -DG4VIS_USE_/;"	s	object:0
 command	build/compile_commands.json	/^  "command": "\/usr\/bin\/c++  -DG4LIB_BUILD_DLL -DG4UI_USE_QT -DG4VIS_USE_OPENGLQT -DG4VIS_USE_/;"	s	object:1
 command	build/compile_commands.json	/^  "command": "\/usr\/bin\/c++  -DG4LIB_BUILD_DLL -DG4UI_USE_QT -DG4VIS_USE_OPENGLQT -DG4VIS_USE_/;"	s	object:2
-command	compile_commands.json	/^  "command": "\/usr\/bin\/c++  -DG4LIB_BUILD_DLL -DG4UI_USE_QT -DG4VIS_USE_OPENGLQT -DG4VIS_USE_/;"	s	object:0
-command	compile_commands.json	/^  "command": "\/usr\/bin\/c++  -DG4LIB_BUILD_DLL -DG4UI_USE_QT -DG4VIS_USE_OPENGLQT -DG4VIS_USE_/;"	s	object:1
-command	compile_commands.json	/^  "command": "\/usr\/bin\/c++  -DG4LIB_BUILD_DLL -DG4UI_USE_QT -DG4VIS_USE_OPENGLQT -DG4VIS_USE_/;"	s	object:2
 const	build/CMakeFiles/3.16.3/CompilerIdC/CMakeCCompilerId.c	/^# define const$/;"	d	file:
 default_target	build/Makefile	/^default_target: all$/;"	t
 depend	build/Makefile	/^depend:$/;"	t
 directory	build/compile_commands.json	/^  "directory": "\/home\/ingbe\/myGeant4\/firstSim\/build",$/;"	s	object:0
 directory	build/compile_commands.json	/^  "directory": "\/home\/ingbe\/myGeant4\/firstSim\/build",$/;"	s	object:1
 directory	build/compile_commands.json	/^  "directory": "\/home\/ingbe\/myGeant4\/firstSim\/build",$/;"	s	object:2
-directory	compile_commands.json	/^  "directory": "\/home\/ingbe\/myGeant4\/firstSim",$/;"	s	object:0
-directory	compile_commands.json	/^  "directory": "\/home\/ingbe\/myGeant4\/firstSim",$/;"	s	object:1
-directory	compile_commands.json	/^  "directory": "\/home\/ingbe\/myGeant4\/firstSim",$/;"	s	object:2
 edit_cache	build/Makefile	/^edit_cache:$/;"	t
 edit_cache/fast	build/Makefile	/^edit_cache\/fast: edit_cache$/;"	t
 fParticleGun	include/PrimaryGeneratorAction.hh	/^        G4ParticleGun* fParticleGun;$/;"	m	class:PrimaryGeneratorAction	typeref:typename:G4ParticleGun *
 file	build/compile_commands.json	/^  "file": "\/home\/ingbe\/myGeant4\/firstSim\/firstSim.cc"$/;"	s	object:0
 file	build/compile_commands.json	/^  "file": "\/home\/ingbe\/myGeant4\/firstSim\/src\/DetectorConstruction.cc"$/;"	s	object:1
 file	build/compile_commands.json	/^  "file": "\/home\/ingbe\/myGeant4\/firstSim\/src\/PrimaryGeneratorAction.cc"$/;"	s	object:2
-file	compile_commands.json	/^  "file": "\/home\/ingbe\/myGeant4\/firstSim\/firstSim.cc"$/;"	s	object:0
-file	compile_commands.json	/^  "file": "\/home\/ingbe\/myGeant4\/firstSim\/src\/DetectorConstruction.cc"$/;"	s	object:1
-file	compile_commands.json	/^  "file": "\/home\/ingbe\/myGeant4\/firstSim\/src\/PrimaryGeneratorAction.cc"$/;"	s	object:2
 first	CMakeLists.txt	/^add_custom_target(first DEPENDS firstSim)$/;"	t
 first	build/Makefile	/^first: cmake_check_build_system$/;"	t
 first/fast	build/Makefile	/^first\/fast:$/;"	t

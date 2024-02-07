@@ -1,2 +1,2 @@
-## ignore ./build/ folder
-build/
+## ignore ./test_git folder
+test_git/
