@@ -21,7 +21,12 @@ int main(int argc, char** argv)
     runManager->SetUserInitialization(physicsList);
     runManager->SetUserInitialization(new DetectorConstruction());
     runManager->SetUserAction(new PrimaryGeneratorAction());
-    runManager->SetUserAction(new RunAction());
+
+    if (argc != 1)
+        runManager->SetUserAction(new RunAction(argv[1]));
+    else
+        runManager->SetUserAction(new RunAction());
+
     runManager->SetUserAction(new SteppingAction());
     runManager->SetUserAction(new EventAction());
     runManager->Initialize();

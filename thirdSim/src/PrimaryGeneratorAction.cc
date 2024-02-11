@@ -12,19 +12,7 @@
 
 PrimaryGeneratorAction::PrimaryGeneratorAction()
 {
-    G4int n_particle = 1;
-    fParticleGun = new G4ParticleGun(n_particle);
-
-    // default particle kinematic
-    G4ParticleTable* particleTable = G4ParticleTable::GetParticleTable();
-    G4String particleName;
-    G4ParticleDefinition* particle
-        = particleTable->FindParticle(particleName = "proton");
-
-    fParticleGun->SetParticlePosition(G4ThreeVector(0.,0.,1.));
-    fParticleGun->SetParticleDefinition(particle);
-    fParticleGun->SetParticleMomentumDirection(G4ThreeVector(0.,0.,1.));
-    fParticleGun->SetParticleEnergy(40. *MeV);
+    fParticleGun = new G4GeneralParticleSource();
 }
 
 PrimaryGeneratorAction::~PrimaryGeneratorAction()
@@ -35,6 +23,5 @@ PrimaryGeneratorAction::~PrimaryGeneratorAction()
 void PrimaryGeneratorAction::GeneratePrimaries(G4Event* anEvent)
 {
     // this function is called at the begining of each event
-
     fParticleGun->GeneratePrimaryVertex(anEvent);
 }

@@ -1,3 +1,4 @@
 ## ignore ./build/ .clangd/ folder
 build/
 .clangd/
+.cache/

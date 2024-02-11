@@ -1,5 +1,5 @@
 /gps/position   0 0 1
-/gps/diriection 0 0 1
+/gps/direction 0 0 1
 /gps/particle   proton
 /gps/energy     40 MeV
 
