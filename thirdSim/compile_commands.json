@@ -1,0 +1,32 @@
+[
+{
+  "directory": "/home/ingbe/myGeant4/thirdSim",
+  "command": "/usr/bin/c++  -DG4LIB_BUILD_DLL -DG4UI_USE_QT -DG4VIS_USE_OPENGLQT -DG4VIS_USE_OPENGLX -DG4VIS_USE_TOOLSSG_QT_GLES -DG4VIS_USE_TOOLSSG_QT_ZB -DG4VIS_USE_TOOLSSG_X11_GLES -DPTL_BUILD_DLL -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NO_DEBUG -DQT_OPENGL_LIB -DQT_WIDGETS_LIB -I/home/ingbe/myGeant4/thirdSim/include -isystem /home/ingbe/geant4/install/include/Geant4 -isystem /usr/include/x86_64-linux-gnu/qt5 -isystem /usr/include/x86_64-linux-gnu/qt5/QtGui -isystem /usr/include/x86_64-linux-gnu/qt5/QtCore -isystem /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -isystem /usr/include/x86_64-linux-gnu/qt5/QtOpenGL -isystem /usr/include/x86_64-linux-gnu/qt5/QtWidgets    -pthread -fPIC -std=c++17 -o CMakeFiles/thirdSim.dir/thirdSim.cc.o -c /home/ingbe/myGeant4/thirdSim/thirdSim.cc",
+  "file": "/home/ingbe/myGeant4/thirdSim/thirdSim.cc"
+},
+{
+  "directory": "/home/ingbe/myGeant4/thirdSim",
+  "command": "/usr/bin/c++  -DG4LIB_BUILD_DLL -DG4UI_USE_QT -DG4VIS_USE_OPENGLQT -DG4VIS_USE_OPENGLX -DG4VIS_USE_TOOLSSG_QT_GLES -DG4VIS_USE_TOOLSSG_QT_ZB -DG4VIS_USE_TOOLSSG_X11_GLES -DPTL_BUILD_DLL -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NO_DEBUG -DQT_OPENGL_LIB -DQT_WIDGETS_LIB -I/home/ingbe/myGeant4/thirdSim/include -isystem /home/ingbe/geant4/install/include/Geant4 -isystem /usr/include/x86_64-linux-gnu/qt5 -isystem /usr/include/x86_64-linux-gnu/qt5/QtGui -isystem /usr/include/x86_64-linux-gnu/qt5/QtCore -isystem /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -isystem /usr/include/x86_64-linux-gnu/qt5/QtOpenGL -isystem /usr/include/x86_64-linux-gnu/qt5/QtWidgets    -pthread -fPIC -std=c++17 -o CMakeFiles/thirdSim.dir/src/DetectorConstruction.cc.o -c /home/ingbe/myGeant4/thirdSim/src/DetectorConstruction.cc",
+  "file": "/home/ingbe/myGeant4/thirdSim/src/DetectorConstruction.cc"
+},
+{
+  "directory": "/home/ingbe/myGeant4/thirdSim",
+  "command": "/usr/bin/c++  -DG4LIB_BUILD_DLL -DG4UI_USE_QT -DG4VIS_USE_OPENGLQT -DG4VIS_USE_OPENGLX -DG4VIS_USE_TOOLSSG_QT_GLES -DG4VIS_USE_TOOLSSG_QT_ZB -DG4VIS_USE_TOOLSSG_X11_GLES -DPTL_BUILD_DLL -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NO_DEBUG -DQT_OPENGL_LIB -DQT_WIDGETS_LIB -I/home/ingbe/myGeant4/thirdSim/include -isystem /home/ingbe/geant4/install/include/Geant4 -isystem /usr/include/x86_64-linux-gnu/qt5 -isystem /usr/include/x86_64-linux-gnu/qt5/QtGui -isystem /usr/include/x86_64-linux-gnu/qt5/QtCore -isystem /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -isystem /usr/include/x86_64-linux-gnu/qt5/QtOpenGL -isystem /usr/include/x86_64-linux-gnu/qt5/QtWidgets    -pthread -fPIC -std=c++17 -o CMakeFiles/thirdSim.dir/src/EventAction.cc.o -c /home/ingbe/myGeant4/thirdSim/src/EventAction.cc",
+  "file": "/home/ingbe/myGeant4/thirdSim/src/EventAction.cc"
+},
+{
+  "directory": "/home/ingbe/myGeant4/thirdSim",
+  "command": "/usr/bin/c++  -DG4LIB_BUILD_DLL -DG4UI_USE_QT -DG4VIS_USE_OPENGLQT -DG4VIS_USE_OPENGLX -DG4VIS_USE_TOOLSSG_QT_GLES -DG4VIS_USE_TOOLSSG_QT_ZB -DG4VIS_USE_TOOLSSG_X11_GLES -DPTL_BUILD_DLL -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NO_DEBUG -DQT_OPENGL_LIB -DQT_WIDGETS_LIB -I/home/ingbe/myGeant4/thirdSim/include -isystem /home/ingbe/geant4/install/include/Geant4 -isystem /usr/include/x86_64-linux-gnu/qt5 -isystem /usr/include/x86_64-linux-gnu/qt5/QtGui -isystem /usr/include/x86_64-linux-gnu/qt5/QtCore -isystem /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -isystem /usr/include/x86_64-linux-gnu/qt5/QtOpenGL -isystem /usr/include/x86_64-linux-gnu/qt5/QtWidgets    -pthread -fPIC -std=c++17 -o CMakeFiles/thirdSim.dir/src/PrimaryGeneratorAction.cc.o -c /home/ingbe/myGeant4/thirdSim/src/PrimaryGeneratorAction.cc",
+  "file": "/home/ingbe/myGeant4/thirdSim/src/PrimaryGeneratorAction.cc"
+},
+{
+  "directory": "/home/ingbe/myGeant4/thirdSim",
+  "command": "/usr/bin/c++  -DG4LIB_BUILD_DLL -DG4UI_USE_QT -DG4VIS_USE_OPENGLQT -DG4VIS_USE_OPENGLX -DG4VIS_USE_TOOLSSG_QT_GLES -DG4VIS_USE_TOOLSSG_QT_ZB -DG4VIS_USE_TOOLSSG_X11_GLES -DPTL_BUILD_DLL -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NO_DEBUG -DQT_OPENGL_LIB -DQT_WIDGETS_LIB -I/home/ingbe/myGeant4/thirdSim/include -isystem /home/ingbe/geant4/install/include/Geant4 -isystem /usr/include/x86_64-linux-gnu/qt5 -isystem /usr/include/x86_64-linux-gnu/qt5/QtGui -isystem /usr/include/x86_64-linux-gnu/qt5/QtCore -isystem /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -isystem /usr/include/x86_64-linux-gnu/qt5/QtOpenGL -isystem /usr/include/x86_64-linux-gnu/qt5/QtWidgets    -pthread -fPIC -std=c++17 -o CMakeFiles/thirdSim.dir/src/RunAction.cc.o -c /home/ingbe/myGeant4/thirdSim/src/RunAction.cc",
+  "file": "/home/ingbe/myGeant4/thirdSim/src/RunAction.cc"
+},
+{
+  "directory": "/home/ingbe/myGeant4/thirdSim",
+  "command": "/usr/bin/c++  -DG4LIB_BUILD_DLL -DG4UI_USE_QT -DG4VIS_USE_OPENGLQT -DG4VIS_USE_OPENGLX -DG4VIS_USE_TOOLSSG_QT_GLES -DG4VIS_USE_TOOLSSG_QT_ZB -DG4VIS_USE_TOOLSSG_X11_GLES -DPTL_BUILD_DLL -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NO_DEBUG -DQT_OPENGL_LIB -DQT_WIDGETS_LIB -I/home/ingbe/myGeant4/thirdSim/include -isystem /home/ingbe/geant4/install/include/Geant4 -isystem /usr/include/x86_64-linux-gnu/qt5 -isystem /usr/include/x86_64-linux-gnu/qt5/QtGui -isystem /usr/include/x86_64-linux-gnu/qt5/QtCore -isystem /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++ -isystem /usr/include/x86_64-linux-gnu/qt5/QtOpenGL -isystem /usr/include/x86_64-linux-gnu/qt5/QtWidgets    -pthread -fPIC -std=c++17 -o CMakeFiles/thirdSim.dir/src/SteppingAction.cc.o -c /home/ingbe/myGeant4/thirdSim/src/SteppingAction.cc",
+  "file": "/home/ingbe/myGeant4/thirdSim/src/SteppingAction.cc"
+}
+]
