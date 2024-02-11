@@ -14,7 +14,7 @@ void RunAction::BeginOfRunAction(const G4Run*)
 {
     G4AnalysisManager* analysisManager = G4AnalysisManager::Instance();
 
-    G4String fileName = "secondSim.root";
+    G4String fileName = "thirdSim.root";
     analysisManager->OpenFile(fileName);
     G4cout << "Using " << analysisManager->GetType() << G4endl;
 
@@ -22,6 +22,10 @@ void RunAction::BeginOfRunAction(const G4Run*)
     analysisManager->CreateNtupleIColumn("eventID");
     analysisManager->CreateNtupleIColumn("volumeID");
     analysisManager->CreateNtupleDColumn("edep");
+    analysisManager->FinishNtuple();
+
+    analysisManager->CreateNtuple("event", "energy deposit per event in volume-1");
+    analysisManager->CreateNtupleDColumn("edep1");
     analysisManager->FinishNtuple();
 }
 

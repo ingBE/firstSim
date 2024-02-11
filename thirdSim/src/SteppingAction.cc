@@ -1,9 +1,12 @@
 #include "SteppingAction.hh"
+#include "EventAction.hh"
 
 #include "G4RunManager.hh"
 #include "G4SystemOfUnits.hh"
 #include "G4Event.hh"
 #include "G4AnalysisManager.hh"
+
+#include "G4EventManager.hh"
 
 SteppingAction::SteppingAction()
     : G4UserSteppingAction()
@@ -25,4 +28,10 @@ void SteppingAction::UserSteppingAction(const G4Step* step)
     analysisManager->FillNtupleIColumn(1, volumeID);
     analysisManager->FillNtupleDColumn(2, totalEdep);
     analysisManager->AddNtupleRow();
+
+    EventAction* eventAction = (EventAction *) G4EventManager::GetEventManager()->GetUserEventAction();
+    if (volumeID == 1)
+    {
+        eventAction->AddEnergyDeposit(totalEdep);
+    }
 }
