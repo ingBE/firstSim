@@ -4,7 +4,6 @@
 #include "PrimaryGeneratorAction.hh"
 #include "RunAction.hh"
 #include "SteppingAction.hh"
-#include "EventAction.hh"
 
 #include "G4RunManager.hh"
 #include "G4UImanager.hh"
@@ -23,7 +22,6 @@ int main(int argc, char** argv)
     runManager->SetUserAction(new PrimaryGeneratorAction());
     runManager->SetUserAction(new RunAction());
     runManager->SetUserAction(new SteppingAction());
-    runManager->SetUserAction(new EventAction());
     runManager->Initialize();
 
     G4VisManager* visManager = new G4VisExecutive(argc, argv);

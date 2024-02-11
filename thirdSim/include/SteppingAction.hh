@@ -8,10 +8,6 @@
 class SteppingAction : public G4UserSteppingAction
 {
     public:
-        SteppingAction();
-        ~SteppingAction() override;
-
-        // method from the base calss
         void UserSteppingAction(const G4Step* step) override;
 
     private:
