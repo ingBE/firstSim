@@ -3,51 +3,98 @@
 
 #include "G4RunManagerFactory.hh"
 #include "G4SteppingVerbose.hh"
+#include "G4UIcommand.hh"
 #include "G4UImanager.hh"
-#include "QBBC.hh"
-
-#include "G4VisExecutive.hh"
 #include "G4UIExecutive.hh"
-
+#include "G4VisExecutive.hh"
+#include "FTFP_BERT.hh"
 #include "Randomize.hh"
+
+namespace {
+    void PrintUsage() {
+        G4cerr << " Usage: " << G4endl;
+        G4cerr << " ./project1 [-m macro ] [-u UIsession] [-t nThreads] [-vDefault]"
+               << G4endl;
+        G4cerr << "   note: -t option is available only for multi-threaded mode."
+               << G4endl;
+    }
+}
 
 int main(int argc,char** argv)
 {
-    // Detect interactive mode (if no arguments) and define UI session
+    // Evaluate arguments
+    //
+    if ( argc > 7 ) {
+        PrintUsage();
+        return 1;
+    }
+
+    G4String macro;
+    G4String session;
+    G4bool verboseBestUnits = true;
+#ifdef G4MULTITHREADED
+    G4int nThreads = 0;
+#endif
+    for ( G4int i=1; i<argc; i=i+2 ) {
+        if      ( G4String(argv[i]) == "-m" ) macro = argv[i+1];
+        else if ( G4String(argv[i]) == "-u" ) session = argv[i+1];
+#ifdef G4MULTITHREADED
+        else if ( G4String(argv[i]) == "-t" ) {
+            nThreads = G4UIcommand::ConvertToInt(argv[i+1]);
+        }
+#endif
+        else if ( G4String(argv[i]) == "-vDefault" ) {
+            verboseBestUnits = false;
+            --i;  // this option is not followed with a parameter
+        }
+        else {
+            PrintUsage();
+            return 1;
+        }
+    }
+
+    // Detect interactive mode (if no macro provided) and define UI session
     //
     G4UIExecutive* ui = nullptr;
-    if ( argc == 1 ) { ui = new G4UIExecutive(argc, argv); }
+    if ( ! macro.size() ) {
+        ui = new G4UIExecutive(argc, argv, session);
+    }
 
     // Optionally: choose a different Random engine...
     // G4Random::setTheEngine(new CLHEP::MTwistEngine);
 
-    //use G4SteppingVerboseWithUnits
-    G4int precision = 4;
-    G4SteppingVerbose::UseBestUnit(precision);
+    // Use G4SteppingVerboseWithUnits
+    if ( verboseBestUnits ) {
+        G4int precision = 4;
+        G4SteppingVerbose::UseBestUnit(precision);
+    }
 
     // Construct the default run manager
     //
     auto runManager =
         G4RunManagerFactory::CreateRunManager(G4RunManagerType::Default);
+#ifdef G4MULTITHREADED
+    if ( nThreads > 0 ) {
+        runManager->SetNumberOfThreads(nThreads);
+    }
+#endif
+
     // Set mandatory initialization classes
     //
-    // Detector construction
-    runManager->SetUserInitialization(new DetectorConstruction());
+    auto detConstruction = new DetectorConstruction();
+    runManager->SetUserInitialization(detConstruction);
 
-    // Physics list
-    auto physicsList = new QBBC;
-    physicsList->SetVerboseLevel(1);
+    auto physicsList = new FTFP_BERT;
     runManager->SetUserInitialization(physicsList);
 
-    // User action initialization
-    runManager->SetUserInitialization(new ActionInitialization());
+    //auto actionInitialization = new ActionInitialization(detConstruction);
+    auto actionInitialization = new ActionInitialization();
+    runManager->SetUserInitialization(actionInitialization);
 
-    // Initialize visualization with the default graphics system
-    auto visManager = new G4VisExecutive(argc, argv);
-    // Constructors can also take optional arguments:
-    // - a graphics system of choice, eg. "OGL"
-    // - and a verbosity argument - see /vis/verbose guidance.
-    // auto visManager = new G4VisExecutive(argc, argv, "OGL", "Quiet");
+    // Initialize visualization
+    //
+    auto visManager = new G4VisExecutive;
+    // G4VisExecutive can take a verbosity argument - see /vis/verbose guidance.
     // auto visManager = new G4VisExecutive("Quiet");
     visManager->Initialize();
 
@@ -56,15 +103,17 @@ int main(int argc,char** argv)
 
     // Process macro or start UI session
     //
-    if ( ! ui ) {
+    if ( macro.size() ) {
         // batch mode
         G4String command = "/control/execute ";
-        G4String fileName = argv[1];
-        UImanager->ApplyCommand(command+fileName);
+        UImanager->ApplyCommand(command+macro);
     }
-    else {
-        // interactive mode
+    else  {
+        // interactive mode : define UI session
         UImanager->ApplyCommand("/control/execute init_vis.mac");
+        if (ui->IsGUI()) {
+            UImanager->ApplyCommand("/control/execute gui.mac");
+        }
         ui->SessionStart();
         delete ui;
     }
