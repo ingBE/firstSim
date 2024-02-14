@@ -1,5 +1,5 @@
 .clangd/
-.build/
+build/
 .README.txt
 README
 History
