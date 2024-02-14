@@ -52,6 +52,7 @@ set(PROJECT1_SCRIPTS
   run1.mac
   run2.mac
   vis.mac
+  gui.mac
   )
 
 foreach(_script ${PROJECT1_SCRIPTS})
