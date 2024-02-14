@@ -237,6 +237,7 @@ PLATFORM_ID	build/CMakeFiles/3.16.3/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^# def
 PROJECT1_SCRIPTS	CMakeLists.txt	/^set(PROJECT1_SCRIPTS$/;"	v
 PrimaryGeneratorAction	include/PrimaryGeneratorAction.hh	/^class PrimaryGeneratorAction : public G4VUserPrimaryGeneratorAction$/;"	c
 PrimaryGeneratorAction	src/PrimaryGeneratorAction.cc	/^PrimaryGeneratorAction::PrimaryGeneratorAction()$/;"	f	class:PrimaryGeneratorAction
+PrintUsage	project1.cc	/^    void PrintUsage() {$/;"	f	namespace:__anonb3dc51e10110	typeref:typename:void
 RM	build/Makefile	/^RM = \/usr\/bin\/cmake -E remove -f$/;"	m
 RunAction	include/RunAction.hh	/^class RunAction : public G4UserRunAction$/;"	c
 RunAction	src/RunAction.cc	/^RunAction::RunAction()$/;"	f	class:RunAction
@@ -260,6 +261,7 @@ UNIX	build/CMakeFiles/3.16.3/CMakeCCompiler.cmake	/^  set(UNIX 1)$/;"	v
 UNIX	build/CMakeFiles/3.16.3/CMakeCXXCompiler.cmake	/^  set(UNIX 1)$/;"	v
 UserSteppingAction	src/SteppingAction.cc	/^void SteppingAction::UserSteppingAction(const G4Step* step)$/;"	f	class:SteppingAction	typeref:typename:void
 WITH_GEANT4_UIVIS	CMakeLists.txt	/^option(WITH_GEANT4_UIVIS "Build project1 with Geant4 UI and Vis drivers" ON)$/;"	D
+__anonb3dc51e10110	project1.cc	/^namespace {$/;"	n	file:
 all	build/Makefile	/^all: cmake_check_build_system$/;"	t
 clean	build/Makefile	/^clean:$/;"	t
 clean/fast	build/Makefile	/^clean\/fast: clean$/;"	t
