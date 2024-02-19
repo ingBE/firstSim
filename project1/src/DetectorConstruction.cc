@@ -64,7 +64,7 @@ G4VPhysicalVolume* DetectorConstruction::Construct()
     "Envelope",               // its name
     logicWorld,               // its mother  volume
     false,                    // no boolean operation
-    0,                        // copy number
+    1,                        // copy number
     checkOverlaps);           // overlaps checking
 
     //
@@ -91,7 +91,7 @@ G4VPhysicalVolume* DetectorConstruction::Construct()
     "Shape1",                 // its name
     logicEnv,                 // its mother  volume
     false,                    // no boolean operation
-    0,                        // copy number
+    2,                        // copy number
     checkOverlaps);           // overlaps checking
 
     //
@@ -118,7 +118,7 @@ G4VPhysicalVolume* DetectorConstruction::Construct()
     "Shape2",                 // its name
     logicEnv,                 // its mother  volume
     false,                    // no boolean operation
-    0,                        // copy number
+    2,                        // copy number
     checkOverlaps);           // overlaps checking
 
     // Set Shape2 as scoring volume

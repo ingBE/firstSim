@@ -6,6 +6,7 @@
 #include "G4Event.hh"
 #include "G4RunManager.hh"
 #include "G4LogicalVolume.hh"
+#include "G4VPhysicalVolume.hh"
 
 SteppingAction::SteppingAction(EventAction* eventAction)
 : fEventAction(eventAction)
@@ -19,7 +20,7 @@ void SteppingAction::UserSteppingAction(const G4Step* step)
         fScoringVolume = detConstruction->GetScoringVolume();
     }
 
-    // get volume of the current step
+    // get logical volume of the current step
     G4LogicalVolume* volume
         = step->GetPreStepPoint()->GetTouchableHandle()
         ->GetVolume()->GetLogicalVolume();
@@ -30,4 +31,13 @@ void SteppingAction::UserSteppingAction(const G4Step* step)
     // collect energy deposited in this step
     G4double edepStep = step->GetTotalEnergyDeposit();
     fEventAction->AddEdep(edepStep);
+
+    // get physical volume of the current step
+    G4VPhysicalVolume* physVolume = step->GetPreStepPoint()->GetPhysicalVolume();
+
+    if ( physVolume->GetCopyNo() == 1 )
+        fEventAction->AddGap(edepStep);
+
+    if ( physVolume->GetCopyNo() == 2 )
+        fEventAction->AddAbs(edepStep);
 }

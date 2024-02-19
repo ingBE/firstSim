@@ -3,6 +3,7 @@
 #include "DetectorConstruction.hh"
 // #include "Run.hh"
 
+#include "G4AnalysisManager.hh"
 #include "G4RunManager.hh"
 #include "G4Run.hh"
 #include "G4AccumulableManager.hh"
@@ -13,8 +14,10 @@
 
 RunAction::RunAction()
 {
+    /*
+
     // add new units for dose
-    //
+    
     const G4double milligray = 1.e-3*gray;
     const G4double microgray = 1.e-6*gray;
     const G4double nanogray  = 1.e-9*gray;
@@ -25,10 +28,28 @@ RunAction::RunAction()
     new G4UnitDefinition("nanogray" , "nanoGy"  , "Dose", nanogray);
     new G4UnitDefinition("picogray" , "picoGy"  , "Dose", picogray);
 
+    */
+
     // Register accumulable to the accumulable manager
     G4AccumulableManager* accumulableManager = G4AccumulableManager::Instance();
     accumulableManager->RegisterAccumulable(fEdep);
     accumulableManager->RegisterAccumulable(fEdep2);
+
+    // Create analysis anager
+    auto analysisManager = G4AnalysisManager::Instance();
+
+    // Create directories
+    // merging ntuple is available only with Root option
+    analysisManager->SetVerboseLevel(1);
+    analysisManager->SetNtupleMerging(true);
+
+    // Create ntuple
+    analysisManager->CreateNtuple("project1", "Edep and TrackL");
+    analysisManager->CreateNtupleDColumn("Eabs");
+    analysisManager->CreateNtupleDColumn("Egap");
+    //analysisManager->CreateNtupleDColumn("Labs");
+    //analysisManager->CreateNtupleDColumn("Lgap");
+    analysisManager->FinishNtuple();
 }
 
 void RunAction::BeginOfRunAction(const G4Run*)
@@ -39,6 +60,13 @@ void RunAction::BeginOfRunAction(const G4Run*)
     // reset accumulables to their initial values
     G4AccumulableManager* accumulableManager = G4AccumulableManager::Instance();
     accumulableManager->Reset();
+
+    // Get analysis manager
+    auto analysisManager = G4AnalysisManager::Instance();
+
+    // Open an output file
+    G4String fileName = "project1.root";
+    analysisManager->OpenFile(fileName);
 }
 
 void RunAction::EndOfRunAction(const G4Run* run)
@@ -102,6 +130,11 @@ void RunAction::EndOfRunAction(const G4Run* run)
         << "------------------------------------------------------------"
         << G4endl
         << G4endl;
+
+    // save ntuple
+    auto analysisManager = G4AnalysisManager::Instance();
+    analysisManager->Write();
+    analysisManager->CloseFile();
 }
 
 void RunAction::AddEdep(G4double edep)
