@@ -44,7 +44,8 @@ RunAction::RunAction()
     analysisManager->SetNtupleMerging(true);
 
     // Create ntuple
-    analysisManager->CreateNtuple("project1", "Edep and TrackL");
+    //analysisManager->CreateNtuple("project1", "Edep and TrackL");
+    analysisManager->CreateNtuple("project1", "Edep");
     analysisManager->CreateNtupleDColumn("Eabs");
     analysisManager->CreateNtupleDColumn("Egap");
     //analysisManager->CreateNtupleDColumn("Labs");
@@ -88,9 +89,9 @@ void RunAction::EndOfRunAction(const G4Run* run)
 
     const auto detConstruction = static_cast<const DetectorConstruction*>(
     G4RunManager::GetRunManager()->GetUserDetectorConstruction());
-    G4double mass = detConstruction->GetScoringVolume()->GetMass();
-    G4double dose = edep/mass;
-    G4double rmsDose = rms/mass;
+    //G4double mass = detConstruction->GetScoringVolume()->GetMass();
+    //G4double dose = edep/mass;
+    //G4double rmsDose = rms/mass;
 
     // Run conditions
     //  note: There is no primary generator action object for "master"
@@ -120,6 +121,7 @@ void RunAction::EndOfRunAction(const G4Run* run)
             << "--------------------End of Local Run------------------------";
     }
 
+    /*
     G4cout
         << G4endl
         << " The run consists of " << nofEvents << " "<< runCondition
@@ -130,6 +132,7 @@ void RunAction::EndOfRunAction(const G4Run* run)
         << "------------------------------------------------------------"
         << G4endl
         << G4endl;
+        */
 
     // save ntuple
     auto analysisManager = G4AnalysisManager::Instance();

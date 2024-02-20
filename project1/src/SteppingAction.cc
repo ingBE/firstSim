@@ -14,6 +14,7 @@ SteppingAction::SteppingAction(EventAction* eventAction)
 
 void SteppingAction::UserSteppingAction(const G4Step* step)
 {
+    /*
     if (!fScoringVolume) {
         const auto detConstruction = static_cast<const DetectorConstruction*>(
           G4RunManager::GetRunManager()->GetUserDetectorConstruction());
@@ -27,6 +28,7 @@ void SteppingAction::UserSteppingAction(const G4Step* step)
 
     // check if we are in scoring volume
     if (volume != fScoringVolume) return;
+    */
 
     // collect energy deposited in this step
     G4double edepStep = step->GetTotalEnergyDeposit();

@@ -67,6 +67,7 @@ G4VPhysicalVolume* DetectorConstruction::Construct()
     1,                        // copy number
     checkOverlaps);           // overlaps checking
 
+    /*
     //
     // Shape 1
     //
@@ -121,7 +122,6 @@ G4VPhysicalVolume* DetectorConstruction::Construct()
     2,                        // copy number
     checkOverlaps);           // overlaps checking
 
-    /*
     // Set Shape2 as scoring volume
     //
     fScoringVolume = logicShape2;
