@@ -51,6 +51,7 @@ set(PROJECT1_SCRIPTS
   run2.mac
   vis.mac
   gui.mac
+  plotNtuple.C
   )
 
 foreach(_script ${PROJECT1_SCRIPTS})
