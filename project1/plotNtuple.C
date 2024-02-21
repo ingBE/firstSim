@@ -14,34 +14,25 @@
   TFile f("project1.root");
 
   // Create a canvas and divide it into 2x2 pads
-  TCanvas* c1 = new TCanvas("c1", "", 20, 20, 1000, 500);
+  TCanvas* c1 = new TCanvas("c1", "", 20, 20, 1000, 1000);
   //c1->Divide(2,2);
-  c1->Divide(2);
+  c1->Divide(2,2);
 
   // Get ntuple
   TNtuple* ntuple = (TNtuple*)f.Get("project1");
 
-  // Draw Eabs histogram in the pad 1
   c1->cd(1);
-  ntuple->Draw("Eabs");
+  ntuple->Draw("Eenv");
 
-  /*
-  // Draw Labs histogram in the pad 2
   c1->cd(2);
-  ntuple->Draw("Labs");
-  */
+  ntuple->Draw("Emat1");
 
-  // Draw Egap histogram in the pad 
-  c1->cd(2);
-  //set logarithmic scale for y
-  //gPad->SetLogy(1);
-  ntuple->Draw("Egap");
+  c1->cd(3);
+  ntuple->Draw("Emat2");
 
-  /*
-  // Draw Lgap histogram in the pad 4
   c1->cd(4);
+  ntuple->Draw("Emat3");
+
   //set logarithmic scale for y
   //gPad->SetLogy(1); 
-  ntuple->Draw("Lgap");
-  */
 }

@@ -20,7 +20,7 @@ class SteppingAction : public G4UserSteppingAction
 
     private:
         EventAction* fEventAction = nullptr;
-        G4LogicalVolume* fScoringVolume = nullptr;
+        //G4LogicalVolume* fScoringVolume = nullptr;
 };
 
 #endif

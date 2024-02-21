@@ -46,8 +46,10 @@ RunAction::RunAction()
     // Create ntuple
     //analysisManager->CreateNtuple("project1", "Edep and TrackL");
     analysisManager->CreateNtuple("project1", "Edep");
-    analysisManager->CreateNtupleDColumn("Eabs");
-    analysisManager->CreateNtupleDColumn("Egap");
+    analysisManager->CreateNtupleDColumn("Eenv");
+    analysisManager->CreateNtupleDColumn("Emat1");
+    analysisManager->CreateNtupleDColumn("Emat2");
+    analysisManager->CreateNtupleDColumn("Emat3");
     //analysisManager->CreateNtupleDColumn("Labs");
     //analysisManager->CreateNtupleDColumn("Lgap");
     analysisManager->FinishNtuple();

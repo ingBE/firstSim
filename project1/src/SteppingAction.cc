@@ -31,15 +31,21 @@ void SteppingAction::UserSteppingAction(const G4Step* step)
     */
 
     // collect energy deposited in this step
-    G4double edepStep = step->GetTotalEnergyDeposit();
-    fEventAction->AddEdep(edepStep);
+    G4double edep = step->GetTotalEnergyDeposit();
+    fEventAction->AddEdep(edep);
 
     // get physical volume of the current step
     G4VPhysicalVolume* physVolume = step->GetPreStepPoint()->GetPhysicalVolume();
 
     if ( physVolume->GetCopyNo() == 1 )
-        fEventAction->AddGap(edepStep);
+        fEventAction->AddEnv(edep);
 
     if ( physVolume->GetCopyNo() == 2 )
-        fEventAction->AddAbs(edepStep);
+        fEventAction->AddMat1(edep);
+
+    if ( physVolume->GetCopyNo() == 3 )
+        fEventAction->AddMat2(edep);
+
+    if ( physVolume->GetCopyNo() == 4 )
+        fEventAction->AddMat3(edep);
 }

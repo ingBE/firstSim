@@ -118,7 +118,38 @@ G4VPhysicalVolume* DetectorConstruction::Construct()
     "Shape2",                 // its name
     logicEnv,                 // its mother  volume
     false,                    // no boolean operation
-    2,                        // copy number
+    3,                        // copy number
+    checkOverlaps);           // overlaps checking
+
+    /*
+    // Set Shape2 as scoring volume
+    //
+    fScoringVolume = logicShape2;
+    */
+
+    //
+    // Shape 3
+    //
+    G4Material* shape3_mat = nist->FindOrBuildMaterial("G4_Pb");
+    G4ThreeVector pos3 = G4ThreeVector(0, 0, -13*cm);
+
+    G4double shape3_dx = 20*cm;
+    G4double shape3_dy = 20*cm;
+    G4double shape3_dz  = 5.*mm;
+    auto solidShape3 = new G4Box("Shape3",                    // its name
+    0.5 * shape3_dx, 0.5 * shape3_dy, 0.5 * shape3_dz);  // its size
+
+    auto logicShape3 = new G4LogicalVolume(solidShape3,  // its solid
+    shape3_mat,                                        // its material
+    "Shape3");                                         // its name
+
+    new G4PVPlacement(nullptr,  // no rotation
+    pos3,                     // at position
+    logicShape3,              // its logical volume
+    "Shape3",                 // its name
+    logicEnv,                 // its mother  volume
+    false,                    // no boolean operation
+    4,                        // copy number
     checkOverlaps);           // overlaps checking
 
     /*

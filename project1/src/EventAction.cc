@@ -4,6 +4,7 @@
 #include "G4AnalysisManager.hh"
 #include "G4Event.hh"
 #include "G4RunManager.hh"
+#include "G4SystemOfUnits.hh"
 
 
 EventAction::EventAction(RunAction* runAction)
@@ -16,10 +17,10 @@ void EventAction::BeginOfEventAction(const G4Event*)
     // Initialization per event
     fEdep = 0.;
 
-    fEnergyAbs = 0.;
-    fEnergyGap = 0.;
-    //fLengthAbs = 0.;
-    //fLengthGap = 0.;
+    fEnergyEnv = 0.;
+    fEnergyMat1 = 0.;
+    fEnergyMat2 = 0.;
+    fEnergyMat3 = 0.;
 }
 
 void EventAction::EndOfEventAction(const G4Event*)
@@ -31,9 +32,9 @@ void EventAction::EndOfEventAction(const G4Event*)
     auto analysisManager = G4AnalysisManager::Instance();
 
     // Fill ntuple
-    analysisManager->FillNtupleDColumn(0, fEnergyAbs);
-    analysisManager->FillNtupleDColumn(1, fEnergyGap);
-    //analysisManager->FillNtupleDColumn(2, fLengthAbs);
-    //analysisManager->FillNtupleDColumn(3, fLengthGap);
+    analysisManager->FillNtupleDColumn(0, fEnergyEnv / eV);
+    analysisManager->FillNtupleDColumn(1, fEnergyMat1 / eV);
+    analysisManager->FillNtupleDColumn(2, fEnergyMat2 / eV);
+    analysisManager->FillNtupleDColumn(3, fEnergyMat3 / eV);
     analysisManager->AddNtupleRow();
 }
